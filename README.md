@@ -36,12 +36,9 @@ body, div, span, a, img, h1, h2, h3, h4, h5 {
 
 If you like, you can add your favourite html5 tags (e.g. section, article, nav, etc.) to the flexbox default list.
 
-To start development, open two separate terminals, and run:
+To start development:
 
 ```
-# terminal 1
-make server
-
-# terminal 2
-make css
+# terminal
+yarn start
 ```

@@ -1,11 +1,11 @@
-@import "normalize.css";
+@import "../node_modules/normalize.css/normalize.css";
 
 body, html {
   width: 100%;
   height: 100%;
 }
 
-body, div, span, a, img, h1, h2, h3, h4, h5 {
+body, div, span, a, img, h1, h2, h3, h4, h5, main, article, aside, section {
   box-sizing: border-box;
   position: relative;
 
@@ -55,9 +55,128 @@ a {
   font-weight: 400;
 }
 
-/*a:hover {
-  font-weight: 400;
-  color: #DADADA;
-  text-decoration: none;
+main {
+  flex-direction: row;
+  height: 100%;
 }
-*/
+
+.left ,  .right {
+  flex-basis: 0;
+  height: 100%;
+}
+
+.left {
+  flex-direction: row;
+  flex-grow: 7;
+}
+
+ .right {
+  flex-grow: 3;
+}
+
+
+.left aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.left aside h2 {
+  width: 170px;
+  padding: 20px 5px 10px 25px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #6B7A89;
+}
+
+.products {
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: 170px;
+}
+
+.product {
+  padding: 10px;
+  width: 50%;
+  margin-bottom: 5px;
+  background-color: #F7F8FA;
+}
+
+.product .display {
+  border: 5px solid #D8D8D8;
+  background-color: #fff;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.product .price {
+  position: absolute;
+  right: 14px;
+  top: 17px;
+  color: #353B46;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.product .img {
+  width: 100%;
+}
+
+.product .add {
+  align-self: center;
+  margin: 18px 0 15px 0;
+}
+
+.product .add .icon {
+  padding: 10px;
+  border-radius: 9999px;
+  flex-basis: 0;
+  flex-grow: 1;
+  border-radius: 50%;
+  background-color: #D8D8D8;
+}
+
+.product .description {
+  flex-direction: row;
+}
+
+.product .description img {
+  align-self: flex-start;
+  margin-top: 17px;
+}
+
+.product .name {
+  flex-basis: 0;
+  flex-grow: 1;
+  word-break: break-all;
+}
+
+.cart {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.checkout {
+  flex-basis: auto;
+  flex-grow: 0;
+  background-color: bisque;
+}
+
+.cart .content {
+  overflow: scroll;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.cart .item {
+  height: 150px;
+  margin-bottom: 20px;
+  background: rgba(0, 255, 0, 0.3);
+}
+
+.checkout {
+  height: 300px;
+  background: rgba(0, 0, 255, 0.3);
+}
