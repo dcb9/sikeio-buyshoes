@@ -4,8 +4,8 @@
   "description": "Startkit For Buyshoes Shopping Cart",
   "private": true,
   "scripts": {
-    "build": "yarn webpack",
     "start": "yarn webpack --watch",
+    "server": "yarn browser-sync start --server --files='index.html,bundle/app.js'",
     "gh-pages": "git checkout gh-pages && git rebase master && git push -f origin gh-pages && git checkout master",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
