@@ -26,7 +26,6 @@ body, div, span, a, img, h1, h2, h3, h4, h5, main, article, aside, section {
 
 body {
   background-color: #F7F8FA;
-  /*background-color: #FFFFFF;*/
   color: #202020;
   font-family: "Avenir Next", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
@@ -57,7 +56,6 @@ a {
 
 main {
   flex-direction: row;
-  background-color: #F7F8FA;
 }
 
 .left , .right {
@@ -66,13 +64,20 @@ main {
 
 .left {
   flex-direction: row;
-  flex-grow: 7;
+  flex-grow: 1;
+  margin-right: 30%;
 }
 
 .right {
-  flex-grow: 3;
-  background-color: #C4CCDA;
   height: 100vh;
+  width: 30%;
+  right: 0;
+  position: fixed;
+
+}
+
+.right .site__right-sidebar-wrapper {
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(31,30,52,1));
 }
 
 
@@ -151,6 +156,19 @@ main {
   flex-basis: 0;
   flex-grow: 1;
   word-break: break-all;
+}
+
+.site__right-sidebar-wrapper {
+  height: 100%;
+}
+
+.site__right-sidebar-toggle {
+  /* 隐藏 sidebar 时的样式 */
+}
+body.js-show-right-sidebar .site__right-sidebar-toggle {
+  /* 显示 sidebar 时的样式*/
+  position: fixed;
+  right: 0;
 }
 
 .cart {
@@ -281,7 +299,6 @@ main {
 .checkout .submit-button {
   background-color: #216E28;
   flex-direction: row;
-  width: 300px;
   height: 66px;
   padding: 15px 0 12px 33px;
   cursor: pointer;
@@ -293,4 +310,60 @@ main {
   color: #fff;
   font-weight: bold;
   margin-left: 58px;
+}
+
+.site__right-sidebar-toggle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #C4CCDA;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 950px) {
+  .left {
+    width: 60%;
+    margin-right: 40%;
+  }
+  .right {
+    width: 40%;
+  }
+  .product {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .left aside {
+    display: none;
+  }
+  .left {
+    width: 100%;
+    margin-right: 30px;
+  }
+  .left .products {
+    width: 100%;
+    margin-left: 0;
+  }
+  .right {
+    display: none;
+  }
+
+  body.js-show-right-sidebar .right {
+    width: 80%;
+    display: block;
+  }
+
+  .site__right-sidebar-toggle {
+    display: block;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(31,30,52,1));
+  }
+
+  body.js-show-right-sidebar .site__right-sidebar-toggle {
+    height: initial;
+    background-image: initial;
+    background-color: initial;
+  }
 }
