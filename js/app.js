@@ -13,5 +13,5 @@ window.onload = function() {
 }
 
 function makeCartScrollNicely() {
-  const ps = new PerfectScrollbar('.cart .content')
+  const ps = new PerfectScrollbar('.cart__items')
 }
